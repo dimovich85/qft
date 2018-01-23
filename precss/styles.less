@@ -2,9 +2,31 @@
 @import  'libs/var.less';
 @import  'libs/smart-grid.less';
 @import  'libs/sprite.less';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
+@font-face {
+	font-family: "Lato"; 
+	src: url("../fonts/Lato-Regular.eot"); 
+	src: url("../fonts/Lato-Regular.eot?#iefix") format("embedded-opentype"),
+	url("../fonts/Lato-Regular.woff") format("woff"), 
+	url("../fonts/Lato-Regular.woff2") format("woff2"),
+	url("../fonts/Lato-Regular.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: 400; 
+}
+
+@font-face {
+	font-family: "LatoSemibold"; 
+	src: url("../fonts/Lato-Semibold.eot"); 
+	src: url("../fonts/Lato-Semibold.eot?#iefix") format("embedded-opentype"),
+	url("../fonts/Lato-Semibold.woff") format("woff"), 
+	url("../fonts/Lato-Semibold.woff2") format("woff2"),
+	url("../fonts/Lato-Semibold.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: 600; 
+}
 
 .reset();
+
 a{
 	text-decoration: none;
 }
@@ -19,16 +41,18 @@ nav{
 }
 
 h1{
-	.font-size(48);
+	.font-size(60);
 	.md(font-size; 40px);
 	.sm(font-size; 30px);
-	.xs(font-size; 24px);	
+	.xs(font-size; 24px);
+	font-family: 'LatoSemibold';	
 }
 h2{
-	.font-size(36);
-	.md(font-size; 30px);
-	.sm(font-size; 24px);
+	.font-size(30);
+	.md(font-size; 24px);
+	.sm(font-size; 22px);
 	.xs(font-size; 20px);
+	font-family: 'LatoSemibold';
 }
 h3{
 	.font-size(30);
@@ -60,9 +84,9 @@ p{
 body {
 	color: #000;
 	max-width: 1920px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Lato', Arial, sans-serif;
 	font-weight: 400;
-	font: 16px/1.5rem 'Open Sans', Arial, 'Times New Roman', Helvetica, sans-serif;
+	font: 16px/2rem 'Lato', Arial, sans-serif;
 	img{
 		max-width: 100%;
 		height: auto;
@@ -74,6 +98,39 @@ body {
 .d-n{
 	display: none;
 }
+
+.text-white{
+	color: #fff;
+}
+
+.text-color{
+	color: @color_black;
+}
+
+.text-red{
+	color: @color_main;
+}
+
+.ta-c{
+	text-align: center;
+}
+
+.cur-p{
+	cursor: pointer;
+}
+
+.d-b{
+	display: block;
+}
+
+.bg-white{
+	background-color: #fff;
+}
+
+.bg-red{
+	background-color: @color_main;
+}
+
 
 
 /* Для модального окна */
@@ -108,7 +165,7 @@ i.fa.closer{
 	transition: color .5s;
 	z-index: 5002;
 	&:hover{
-		color: @color_second;
+		color: @color_main;
 	}
 }
 
