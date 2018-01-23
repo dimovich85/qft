@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv='X-UA-Compatible' content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="favicon.png">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/sprite.css">
+	<link rel="stylesheet" href="css/base64.css">
+
+	<!-- HTML5 shim and Respond.js-->
+	<!-- [if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<! [endif]-->	
+
+</head>
+<body>
+
+
+<!-- Нужен иконочный шрифт или своя иконка с классом closer
+
+modal-container - фиксед, черный бэкграунд
+modal__main - здесь можно хранить верстку всех модалок, которых может быть разное количество
+modal__content - собственно внутренность модалки, таких дивов можно несколько
+active - показывает какой-то один контейнер с контентом, управляется через js
+ 
+-->
+
+<section class="modal-container modal d-n">
+	<div class="modal__main">
+		<i class="fa fa-times closer cur-p"></i>
+		<div class="modal__content active rating">
+			<h4>На сайте с: </h4><span> 24.10.2017</span>
+			<table class="table table-striped">
+					<tbody>
+						<tr>
+							<td>Успешные покупки</td>
+							<td>Жалобы</td>
+							<td>Успешные продажи</td>
+						</tr>
+						<tr class="rates__icons">
+							<td>
+								<i class="fa fa-check"></i>
+								<span class='check_info'>10</span>
+							</td>
+							<td>
+								<i class="fa fa-thumbs-down"></i>
+								<span class="bad_info">2</span>
+							</td>
+							<td>
+								<i class="fa fa-handshake-o"></i>
+								<span class="stars_info">15</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+		</div>
+	</div>
+</section>
+</body>
+</html>
