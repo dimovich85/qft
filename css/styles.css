@@ -53,7 +53,7 @@ This must be run when you have at least 2 sprites.
   src: url("../fonts/Lato-Regular.eot");
   src: url("../fonts/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato-Regular.woff") format("woff"), url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.ttf") format("truetype");
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 @font-face {
@@ -61,7 +61,7 @@ This must be run when you have at least 2 sprites.
   src: url("../fonts/Lato-Semibold.eot");
   src: url("../fonts/Lato-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato-Semibold.woff") format("woff"), url("../fonts/Lato-Semibold.woff2") format("woff2"), url("../fonts/Lato-Semibold.ttf") format("truetype");
   font-style: normal;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 body,
@@ -190,12 +190,12 @@ nav li {
 }
 
 h1 {
-  font-size: 3rem;
-  font-family: 'Lato';
+  font-size: 3.75rem;
+  font-family: 'LatoSemibold';
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 1.875rem;
   font-family: 'LatoSemibold';
 }
 
@@ -244,6 +244,53 @@ body img {
   display: none;
 }
 
+.text-white {
+  color: #fff;
+}
+
+.text-color {
+  color: #000;
+}
+
+.text-red {
+  color: #f61729;
+}
+
+.ta-c {
+  text-align: center;
+}
+
+.cur-p {
+  cursor: pointer;
+}
+
+.d-b {
+  display: block;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-red {
+  background-color: #f61729;
+}
+
+.tt-u {
+  text-transform: uppercase;
+}
+
+/* Styles */
+
+/* Copyright */
+
+.copyright__p {
+  color: #777777;
+  font-size: 12px;
+}
+
+/* END Copyright */
+
 /* Для модального окна */
 
 section.modal {
@@ -285,7 +332,7 @@ i.fa.closer {
   top: 10px;
   right: 10px;
   font-size: 20px;
-  color: #000;
+  color: #333333;
   -webkit-transition: color .5s;
   -o-transition: color .5s;
   -moz-transition: color .5s;
@@ -294,7 +341,7 @@ i.fa.closer {
 }
 
 i.fa.closer:hover {
-  color: #dd1a32;
+  color: #f61729;
 }
 
 .modal__content {
@@ -325,7 +372,7 @@ i.fa.closer:hover {
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   h3 {
@@ -344,7 +391,7 @@ i.fa.closer:hover {
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
