@@ -24,10 +24,12 @@
 
 <!-- Header -->
 <header class="header">
-	<div class="wrapper text-white">
+	<div class="wrapper text-white header__wrapper">
 		<header class="header__nav">
 			<figure class="logotype">
-				<img src="img/logo.svg" alt="Logotype" class="logotype__svg">
+				<div class="logotype__container">
+					<img src="img/logo-white.svg" alt="Logotype" class="logotype__svg">
+				</div>
 				<span class="logotype__sign">Казахстано-Финский центр инновационных технологий</span>
 			</figure>
 			<nav class="navblock">
@@ -41,19 +43,22 @@
 					<li class="navblock__item">
 						<a href="#" class="navblock__link nav__links">Контакты</a>
 					</li>
+					<li class="navblock__item">
+						<a href="tel:+7777333227" class="navblock__item_phone navblock__link"><img src="img/icons/ico-phone.svg" alt="Icon for phone" class="icon icon__phone">+7 777 333 222 7</a>
+					</li>
 				</menu>
-				<a href="tel:+7777333227" class="navblock__item_phone"><img src="img/icons/ico-phone.svg" alt="Icon for phone" class="icon icon__phone">+7 777 333 222 7</a>
+				<img src="img/humb.svg" alt="Menu hamburger" class="d-n icon icon__hamburger">
 			</nav>
 		</header>
 		<main class="first-screen">
 			<h1 class="first-screen__h1 ta-c">
-				<span class="first-screen__h1_span">Наша миссия -</span>
+				<span class="first-screen__h1_span">Наша миссия —</span>
 				<br>
 				сделать мир чище!
 			</h1>
 			<section class="buttons-container">
-				<button class="buttons-container__button tt-u btn" type="button">Связаться с нами</button>
-				<button class="buttons-container__button btn tt-u" type="button"><img class="icon icon__play" src="img/icons/ico-play.svg" alt="Icon play"> Смотреть видео</button>
+				<button class="buttons-container__button tt-u btn buttons-container__button_white" type="button">Связаться с нами</button>
+				<button class="buttons-container__button btn tt-u buttons-container__button_red" type="button"><img class="icon icon__play" src="img/icons/ico-play.svg" alt="Icon play"> Смотреть видео</button>
 			</section>
 		</main>
 		<footer class="first-screen__footer">
@@ -72,13 +77,13 @@
 			<img src="img/second_screen_img.jpg" alt="Who we are" class="who-we-are__img">
 		</figure>
 		<article class="who-we-are__textblock">
-			<h2 class="who-we-are__h2 tt-u h__lines text-red ta-c">
-				кто мы?
+			<h2 class="who-we-are__h2 tt-u text-red ta-c">
+				<span class="h__lines">кто мы?</span>
 			</h2>
 				<p class="who-we-are__p">Как логичное продолжение инициативы Президента Республики Казахстан с целью реализации стратегии «2050» была инициирована идея по созданию Казахстано-Финского центра инновационных технологий на базе Астана ЭКСПО 2017.</p>
 
 				<p class="who-we-are__p">Задачей центра будет выявление потенциальных проектов в сфере зеленой экономики, машиностроения, агропромышленного комплекса, энергоэфективных и водных технологий, химической промышленности и IT индустрии.</p>
-				<button class="btn text-red tt-u" type="button">узнать больше</button>
+				<button class="btn text-red tt-u who-we-are__button" type="button">узнать больше</button>
 		</article>
 	</div>
 </section>
@@ -90,7 +95,7 @@
 
 <section class="partners">
 	<div class="wrapper">
-		<h2 class="text-red tt-u h__lines ta-c">Наши партнеры</h2>
+		<h2 class="text-red tt-u ta-c partners__h2"><span class="h__lines">Наши партнеры</span></h2>
 		<section class="partners__logos">
 			<div class="partners__logo">
 				<img src="img/icons/logo1.png" alt="Logo of partner" class="partners__logo_img">
@@ -113,10 +118,10 @@
 <!-- Video -->
 
 <section class="video">
-	<h2 class="text-red tt-u h__lines ta-c">Видео о нашем проекте</h2>
+	<h2 class="text-red tt-u ta-c video__h2"><span class="h__lines">Видео о нашем проекте</span></h2>
 	<figure class="video__figure">
-		<div class="relation">
-			<iframe class='video_frame' src="https://www.youtube.com/embed/2tJonNpFfS8" frameborder="0" allowfullscreen></iframe>
+		<div class="video__relation">
+			<iframe class='video__frame' src="https://www.youtube.com/embed/2tJonNpFfS8" frameborder="0" allowfullscreen></iframe>
 		</div>
 	</figure>
 </section>
@@ -126,7 +131,7 @@
 <!-- Contacts -->
 
 <section class="contacts">
-	<h2 class="text-white tt-u h__lines ta-c">Свяжитесь с нами</h2>
+	<h2 class="text-white tt-u ta-c contacts__h2"><span class="h__lines">Свяжитесь с нами</span></h2>
 	<div class="wrapper">
 		<section class="contacts__blocks">
 			<form action="#" class="contacts__form contacts__block text-white">
@@ -136,9 +141,9 @@
 				<input type="text" name="name" class="contacts__input" placeholder="Имя">
 				<input type="email" name="email" class="contacts__input" placeholder="Email">
 				<textarea name="message" rows="5" class="contacts__input_textarea contacts__input" placeholder="Комментарий"></textarea>
-				<button class="contacts__button tt-u bg-red text-white">Отправить</button>
+				<button class="contacts__button tt-u bg-red text-white btn">Отправить</button>
 			</form>
-			<aside class="contacts__info contacts__block">
+			<aside class="contacts__aside contacts__block">
 				<h4 class="contacts__h4">
 					KaukoInternational
 					<br> 
@@ -150,8 +155,8 @@
 					050008 Алматы, Казахстан
 				</p>
 				<p class="contacts__info">
-					<img src="img/icons/ico-phone.svg" alt="Icon phone" class="icon icon__phone icon__phone_red">
-					+7 777 333 222 7
+					<img src="img/icons/ico-phone-red.svg" alt="Icon phone" class="icon icon__phone icon__phone_red">
+					<a href="tel:+77773332227" class="contacts__link">+7 777 333 222 7</a>
 				</p>
 			</aside>
 		</section>
@@ -162,11 +167,11 @@
 
 <!-- Copyright -->
 
-<section class="copyright">
+<footer class="copyright">
 	<p class="copyright__p ta-c">
 		Copyright 2018 © QazFinTech — Все права защищены
 	</p>
-</section>
+</footer>
 
 <!-- END Copyright -->
 

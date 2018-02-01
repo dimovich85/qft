@@ -194,3 +194,329 @@ i.fa.closer{
 }
 
 /* Основные стили */
+
+/* Общие стили для страницы */
+
+.icon{
+	width: 15px;
+	height: 15px;
+	margin: 0 5px;
+	position: relative;
+	top: 2px;
+	z-index: 1;
+}
+
+.link__down{
+	display: block;
+	width: 30px;
+	height: 20px;
+	margin: 5px auto;
+}
+
+.btn{
+	width: 215px;
+	background-color: transparent;
+	border: 2px solid @color_main;
+	border-radius: @border_radius;
+	padding: 15px 5px;
+	cursor: pointer;
+}
+
+.h__lines{
+	position: relative;
+	z-index: 1;
+	&:before, &:after{
+		content: '';
+		display: block;
+		position: absolute;
+		border-top: 1px solid @color_main;
+		width: @lines_width;
+		top: 50%;
+		z-index: 2;
+	}
+	&:before{
+		left: -@lines_pos;
+	}
+	&:after{
+		right:  -@lines_pos;
+	}
+}
+
+/* Header */
+
+header.header{
+	background: #fff url(../img/first_screen_bg.jpg) no-repeat top;
+	background-size: cover;
+}
+
+.header__nav{
+	padding: 16px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logotype{
+	.size(5);
+	margin-left: 25px;
+	position: relative;
+	z-index: 1;
+	&__{
+		width: 50%;
+	}
+	&__sign{
+		font-size: 14px;
+		position: absolute;
+		z-index: 2;
+		bottom: 5px;
+		right: -20px;
+	}
+}
+
+.navblock{
+	
+	&__menu{
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 0;
+	}
+
+	&__item{
+		& + .navblock__item{
+			margin-left: 20px;
+		}
+	}
+
+	&__link{
+		color: #fff;
+		transition: color 0.5s;
+		&:hover{
+			color: @color_main;
+		}
+	}
+}
+
+.first-screen{
+	padding: 150px 0;
+
+	&__h1{
+		line-height: 3rem;
+		margin-bottom: 80px;
+		&_span{
+			font-size: 30px;
+		}
+	}
+
+	&__footer{
+		padding: 0 0 55px;
+	}
+}
+
+.buttons-container{
+	text-align: center;
+	&__button{
+		color: #fff;
+		display: inline-block;
+		height: 50px;
+		&_white{
+			margin-right: 10px;
+			border-color: #fff;
+		}
+		&_red{
+			margin-left: 10px;
+			position: relative;
+			top: 2px;
+			z-index: 1;
+		}
+	}
+}
+/*
+		END Header
+
+		Who we are
+*/
+
+.who-we-are{
+	padding: 120px 0;
+	.wrapper{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&__figure{
+		width: 580px
+	}
+
+	&__textblock{
+		width: 400px;
+		flex-grow: 1;
+		padding: 40px 10px;
+		line-height: 1.5rem;
+	}
+
+	&__h2{
+		margin-bottom: 20px;
+	}
+
+	&__p{
+		margin-bottom: 20px;
+	}
+
+	&__button{
+		
+	}
+}
+
+/*
+	END Who we are
+
+	Partners
+*/
+
+.partners{
+	padding: 10px 0 100px;
+
+	&__h2{
+		margin-bottom: 40px;
+	}
+
+	&__logos{
+		.row-flex();
+		align-items: center;
+	}
+
+	&__logo{
+		.col();
+		.size(3);
+		.size-sm(6);
+		.size-xs(11);
+	}
+}
+
+/*
+
+	END Partners
+
+	Video
+
+*/
+
+.video{
+	padding: 10px 0 80px;
+
+	&__h2{
+		margin-bottom: 40px;
+	}
+
+	&__figure{
+		width: 83%;
+		padding: 0 10px;
+		margin: 0 auto;
+	}
+
+	&__relation{
+		padding-top: 56.25%;
+		height: 0;
+		position: relative;
+		z-index: 1;
+	}
+
+	&__frame{
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/*
+
+	END Video
+
+	Contacts
+
+*/
+
+.contacts{
+	padding: 110px 0;
+	background: #fff url(../img/contacts_screen_bg.jpg) no-repeat top;
+	background-size: cover;
+
+	&__h2{
+		margin-bottom: 80px;
+	}
+	
+	&__blocks{
+		.row-flex();
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	&__block{
+		.size(5);
+	}
+
+	&__aside{
+		padding: 40px 100px 60px 30px;
+		width: 400px;
+		margin-right: 15%;
+		background-color: @color_contacts_bg;
+		box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+	}
+
+	&__form{
+
+	}
+
+	&__note{
+		margin-bottom: 30px;
+	}
+
+	&__input{
+		resize: none;
+		display: block;
+		width: 100%;
+		background-color: @color_contacts_bg;
+		margin-bottom: 20px;
+		border: none;
+		border-radius: @border_radius;
+		padding: 10px 5px 10px 30px;
+		font-size: 16px;
+	}
+
+	&__h4{
+		margin-bottom: 20px;
+	}
+
+	&__info{
+		margin-bottom: 10px;
+	}
+
+	&__button{
+		width: 100%;
+		padding: 10px 5px;
+		background-color: @color_main;
+		color: #fff;
+	}
+
+	&__link{
+		color: #000;
+	}
+
+}
+
+/*
+
+	END Contacts
+
+	Footer
+
+*/
+
+.copyright{
+	padding: 10px 10px;
+}
