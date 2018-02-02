@@ -23,10 +23,11 @@
 <body>
 
 <!-- Header -->
-<header class="header">
+<header class="header" id="top">
 	<div class="wrapper text-white header__wrapper">
 		<header class="header__nav">
-			<figure class="logotype">
+			<figure class="logotype cur-p">
+				<!-- Логотип сдела ссылкой на верх страницы с помощью js -->
 				<div class="logotype__container">
 					<img src="img/logo-white.svg" alt="Logotype" class="logotype__svg">
 				</div>
@@ -35,16 +36,16 @@
 			<nav class="navblock">
 				<menu class="navblock__menu">
 					<li class="navblock__item">
-						<a href="#" class="navblock__link nav__links">О нас</a>
+						<a href="#about-us" class="navblock__link nav__links">О нас</a>
 					</li>
 					<li class="navblock__item">
-						<a href="#" class="navblock__link nav__links">Партнеры</a>
+						<a href="#our-partners" class="navblock__link nav__links">Партнеры</a>
 					</li>
 					<li class="navblock__item">
-						<a href="#" class="navblock__link nav__links">Контакты</a>
+						<a href="#our-contacts" class="navblock__link nav__links">Контакты</a>
 					</li>
-					<li class="navblock__item">
-						<a href="tel:+7777333227" class="navblock__item_phone navblock__link"><img src="img/icons/ico-phone.svg" alt="Icon for phone" class="icon icon__phone">+7 777 333 222 7</a>
+					<li class="navblock__item navblock__item_phone">
+						<a href="tel:+7777333227" class="navblock__link_phone navblock__link"><img src="img/icons/ico-phone.svg" alt="Icon for phone" class="icon icon__phone">+7 777 333 222 7</a>
 					</li>
 				</menu>
 				<img src="img/humb.svg" alt="Menu hamburger" class="d-n icon icon__hamburger">
@@ -57,12 +58,23 @@
 				сделать мир чище!
 			</h1>
 			<section class="buttons-container">
-				<button class="buttons-container__button tt-u btn buttons-container__button_white" type="button">Связаться с нами</button>
-				<button class="buttons-container__button btn tt-u buttons-container__button_red" type="button"><img class="icon icon__play" src="img/icons/ico-play.svg" alt="Icon play"> Смотреть видео</button>
+				<button class="buttons-container__button tt-u btn buttons-container__button_red btn_contact" type="button">Связаться с нами</button>
+				<button class="buttons-container__button btn tt-u buttons-container__button_white btn_video" type="button">
+					<i class="icon icon__play">
+						<svg version="1.1" id="play" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 114.7 142.6" style="enable-background:new 0 0 114.7 142.6;" xml:space="preserve">
+							<style type="text/css">
+								.st0{fill:#fff;}
+							</style>
+							<polygon class="st0" points="3.4,142.6 0,0 114.7,71.3 "/>
+						</svg>
+					</i>
+					<span>Смотреть видео</span>
+				</button>
 			</section>
 		</main>
 		<footer class="first-screen__footer">
-			<a href="#" class="link__down nav__links"><img src="img/icons/ico--arrow-down.svg" alt="Link scroll down"></a>
+			<a href="#about-us" class="link__down nav__links"><img src="img/icons/ico--arrow-down.svg" alt="Link scroll down"></a>
 		</footer>
 	</div>
 </header>
@@ -71,7 +83,7 @@
 
 <!-- Who we are -->
 
-<section class="who-we-are">
+<section class="who-we-are" id="about-us">
 	<div class="wrapper">
 		<figure class="who-we-are__figure">
 			<img src="img/second_screen_img.jpg" alt="Who we are" class="who-we-are__img">
@@ -83,7 +95,7 @@
 				<p class="who-we-are__p">Как логичное продолжение инициативы Президента Республики Казахстан с целью реализации стратегии «2050» была инициирована идея по созданию Казахстано-Финского центра инновационных технологий на базе Астана ЭКСПО 2017.</p>
 
 				<p class="who-we-are__p">Задачей центра будет выявление потенциальных проектов в сфере зеленой экономики, машиностроения, агропромышленного комплекса, энергоэфективных и водных технологий, химической промышленности и IT индустрии.</p>
-				<button class="btn text-red tt-u who-we-are__button" type="button">узнать больше</button>
+				<button class="btn text-red tt-u who-we-are__button btn_more" type="button">узнать больше</button>
 		</article>
 	</div>
 </section>
@@ -93,7 +105,7 @@
 
 <!-- Partners -->
 
-<section class="partners">
+<section class="partners" id="our-partners">
 	<div class="wrapper">
 		<h2 class="text-red tt-u ta-c partners__h2"><span class="h__lines">Наши партнеры</span></h2>
 		<section class="partners__logos">
@@ -117,7 +129,7 @@
 
 <!-- Video -->
 
-<section class="video">
+<section class="video" id="promo-video">
 	<h2 class="text-red tt-u ta-c video__h2"><span class="h__lines">Видео о нашем проекте</span></h2>
 	<figure class="video__figure">
 		<div class="video__relation">
@@ -130,7 +142,7 @@
 
 <!-- Contacts -->
 
-<section class="contacts">
+<section class="contacts" id="our-contacts">
 	<h2 class="text-white tt-u ta-c contacts__h2"><span class="h__lines">Свяжитесь с нами</span></h2>
 	<div class="wrapper">
 		<section class="contacts__blocks">
@@ -175,21 +187,54 @@
 
 <!-- END Copyright -->
 
-<!--<section class="modal-container modal d-n">
+<section class="modal-container modal d-n">
 	<div class="modal__main">
-		<i class="closer cur-p"></i>
-		<div class="modal__content">
-			<p>
-				В этом году ЭКСПО 2017 посетило более 4 млн. гостей со всего мира. Были представлены технологии самых современных тенденций развития нашей планеты в ближайшем будущем.
-				Как логичное продолжение инициативы Президента Республики Казахстан с целью реализации стратегии «2050» была инициирована идея по созданию Казахстано-Финского центра инновационных технологий на базе Астана ЭКСПО 2017.
 
-				Задачей центра будет выявление потенциальных проектов в сфере зеленой экономики, машиностроения, агропромышленного комплекса, энергоэфективных и водных технологий, химической промышленности и IT индустрии.
-
-				Вместе с самой зеленой и одной из самых технологичных стран в мире, Финляндской Республикой, мы инициируем долгосрочную программу по созданию совместных предприятий и выведению Казахстана на новый технологический уровень с внедрением самых инновационных решений в различных областях экономики. Казахстан станет драйвером развития инноваций во всем центрально-азиатском регионе. В рамках центра компания QazFinTech при поддержке министерства энергетики, Kazakh Invest и международного финансового центра Астана будет развивать национальную программу импортозамещения, повышать качество человеческого капитала, привлекая специалистов из Финляндии, выявлять потенциально интересные и окупаемые проекты, разрабатывать ТЕО с целью привлечения инвестиций в страну со всего мира. При поддержке правительств двух стран и частного сектора будет создана абсолютно транспарентная система, которая поможет двум дружественным странам обмениваться опытом и расти ради процветания будущих поколений. 
-			</p>
+		<div class="modal__content more">
+			<article class="more__article">
+				<p class="more__p">
+					В этом году ЭКСПО 2017 посетило более 4 млн. гостей со всего мира. Были представлены технологии самых современных тенденций развития нашей планеты в ближайшем будущем.
+					Как логичное продолжение инициативы Президента Республики Казахстан с целью реализации стратегии «2050» была инициирована идея по созданию Казахстано-Финского центра инновационных технологий на базе Астана ЭКСПО 2017.
+				</p>
+				<p class="more__p">
+					Задачей центра будет выявление потенциальных проектов в сфере зеленой экономики, машиностроения, агропромышленного комплекса, энергоэфективных и водных технологий, химической промышленности и IT индустрии.
+				</p>
+				<p class="more__p">
+					Вместе с самой зеленой и одной из самых технологичных стран в мире, Финляндской Республикой, мы инициируем долгосрочную программу по созданию совместных предприятий и выведению Казахстана на новый технологический уровень с внедрением самых инновационных решений в различных областях экономики. Казахстан станет драйвером развития инноваций во всем центрально-азиатском регионе. В рамках центра компания QazFinTech при поддержке министерства энергетики, Kazakh Invest и международного финансового центра Астана будет развивать национальную программу импортозамещения, повышать качество человеческого капитала, привлекая специалистов из Финляндии, выявлять потенциально интересные и окупаемые проекты, разрабатывать ТЕО с целью привлечения инвестиций в страну со всего мира. При поддержке правительств двух стран и частного сектора будет создана абсолютно транспарентная система, которая поможет двум дружественным странам обмениваться опытом и расти ради процветания будущих поколений. 
+				</p>
+			</article>
 		</div>
+
+		<div class="modal__content contact-us">
+			<form action="#" class="contacts__form contacts__block text-white">
+				<p class="contacts__note">
+					Напишите нам и мы свяжемся с Вами в ближайшее время
+				</p>
+				<input type="text" name="name" class="contacts__input" placeholder="Имя">
+				<input type="email" name="email" class="contacts__input" placeholder="Email">
+				<textarea name="message" rows="5" class="contacts__input_textarea contacts__input" placeholder="Комментарий"></textarea>
+				<button class="contacts__button tt-u bg-red text-white btn">Отправить</button>
+			</form>
+		</div>
+
+		<div class="modal__content watch-video">
+			<figure class="video__figure">
+				<div class="video__relation">
+					<iframe class='video__frame' src="https://www.youtube.com/embed/2tJonNpFfS8" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</figure>
+		</div>
+
 	</div>
-</section>-->
+</section>
+
+<!-- Button up -->
+
+<div class="button-up cur-p">
+	<a href="#top" title="Наверх"></a>
+</div>
+
+<!-- END Button up -->
 
 <script src="js/Plugins/jquery-3.1.1.min.js"></script>
 <script src="js/js.js"></script>

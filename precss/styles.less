@@ -96,7 +96,7 @@ body {
 /* Atomic */
 
 .d-n{
-	display: none;
+	display: none !important;
 }
 
 .text-white{
@@ -137,63 +137,24 @@ body {
 
 /* Styles */
 
+// Animation
 
-/* Copyright */
+@keyframes moving {
+	0% {transform: translateY(0px);}
+	25% {transform: translateY(-5px);}
+	50% {transform: translateY(5px);}
+	100% {transform: translateY(0px);}
+}
 
-.copyright{
+@keyframes head-appear{
+	from{
+		opacity: 0;
+	}
 
-	&__p{
-		color: @color_placeholder_copyright;
-		font-size: 12px;
+	to{
+		opacity: 1;
 	}
 }
-
-/* END Copyright */
-
-/* Для модального окна */
-section.modal{
-	background-color: rgba(0,0,0,.7);
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 5000;
-}
-
-.modal__main{
-	position: relative;
-	width: 500px;
-	padding: 40px 5px;
-	max-width: 90%;
-	z-index: 5001;
-	background-color: #fff;
-}
-
-i.fa.closer{
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	font-size: 20px;
-	color: @color_text;
-	transition: color .5s;
-	z-index: 5002;
-	&:hover{
-		color: @color_main;
-	}
-}
-
-.modal__content{
-	display: none;
-	&.active{
-		display: block;
-	}
-}
-
-/* Основные стили */
 
 /* Общие стили для страницы */
 
@@ -204,6 +165,14 @@ i.fa.closer{
 	position: relative;
 	top: 2px;
 	z-index: 1;
+
+	&__play{
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		position: relative;
+		top: 2px;
+	}
 }
 
 .link__down{
@@ -211,6 +180,26 @@ i.fa.closer{
 	width: 30px;
 	height: 20px;
 	margin: 5px auto;
+	animation: moving 1s cubic-bezier(.14,1.02,.58,1.25) infinite  paused;
+	&:hover{
+		animation-play-state: running;
+	}
+}
+
+.scroll-header{
+	position: fixed;
+	height: 50px;
+	padding: 10px 0;
+	animation: head-appear .5s;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	z-index: 1000;
+	img.logo_head{
+		width: 70px;
+		height: auto;
+	}
 }
 
 .btn{
@@ -289,9 +278,10 @@ header.header{
 
 	&__link{
 		color: #fff;
-		transition: color 0.5s;
+		transition: border-bottom-color 0.5s;
+		border-bottom: 2px solid transparent;
 		&:hover{
-			color: @color_main;
+			border-bottom-color: @color_main;
 		}
 	}
 }
@@ -319,14 +309,32 @@ header.header{
 		display: inline-block;
 		height: 50px;
 		&_white{
-			margin-right: 10px;
+			margin-left: 10px;
 			border-color: #fff;
+			position: relative;
+			top: 5px;
+			z-index: 1;
+			transition: color 0.5s;
+			&:hover{
+				color: @color_main;
+				.st0{
+					transition: fill 0.5s;
+					fill: @color_main;
+				}
+			}
+			span{
+				position: relative;
+				bottom: 1px;
+				z-index: 1;
+			}
 		}
 		&_red{
-			margin-left: 10px;
-			position: relative;
-			top: 2px;
+			margin-right: 10px;
 			z-index: 1;
+			&:hover{
+				transition: color 0.5s;
+				color: @color_main;
+			}
 		}
 	}
 }
@@ -365,7 +373,11 @@ header.header{
 	}
 
 	&__button{
-		
+		&:hover{
+			transition: background-color 0.5s, color 0.5s;
+			background-color: @color_main;
+			color: #fff;
+		}
 	}
 }
 
@@ -384,6 +396,7 @@ header.header{
 
 	&__logos{
 		.row-flex();
+		justify-content: center;
 		align-items: center;
 	}
 
@@ -501,6 +514,11 @@ header.header{
 		padding: 10px 5px;
 		background-color: @color_main;
 		color: #fff;
+		transition: background-color 0.5s, color 0.5s;
+		&:hover{
+			background-color: #fff;
+			color: @color_main;
+		}
 	}
 
 	&__link{
@@ -517,6 +535,134 @@ header.header{
 
 */
 
+/* Copyright */
+
+
 .copyright{
 	padding: 10px 10px;
+
+	&__p{
+		color: @color_placeholder_copyright;
+		font-size: 12px;
+	}
+}
+
+/*
+
+	END Footer
+
+	Modal
+
+*/
+
+/* Для модального окна */
+section.modal{
+	background-color: rgba(0,0,0,.7);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 5000;
+}
+
+.modal__main{
+	position: relative;
+	width: 500px;
+	padding: 5px;
+	max-width: 80%;
+	z-index: 5001;
+}
+
+i.closer{
+	position: absolute;
+	top: 2px;
+	right: 10px;
+	height: 20px;
+	color: @color_text;
+	transition: color .5s;
+	z-index: 5002;
+}
+
+.modal__content{
+	display: none;
+	&.active{
+		display: block;
+	}
+	
+	background-color: #fff;
+	width: 600px;
+	max-width: 100%;
+	max-height: 80vh;
+
+	&.more{
+		overflow: auto;
+		padding: 20px 10px;
+		p{
+			margin-top: 10px;
+			margin-bottom: 20px;
+			text-indent: 10px;
+			&:first-letter{
+				font-weight: bold;
+				color: @color_main;
+			}
+		}
+	}
+
+	&.contact-us{
+		padding: 20px 10px 50px;
+		form{
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			p{
+				margin-top: 15px;
+				color: #000;
+				text-align: center;
+			}
+		}
+	}
+
+	&.watch-video{
+		margin-top: 70px;
+		figure{
+			width: 100%;
+			height: 100%;
+			padding: 0;
+		}
+	}
+}
+
+/*
+
+	Functional styles
+
+*/
+
+.button-up{
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	opacity: .7;
+	background-color: #777;
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+	a{
+		display: block;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -10px;
+		margin-left: -10px;
+		border-left: 1px solid @color_main;
+		border-top: 1px solid @color_main;
+		transform: rotate(45deg);
+		text-decoration: none;
+	}
 }
