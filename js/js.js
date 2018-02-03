@@ -38,18 +38,10 @@ let $modalMore = $('section.modal-container .more');
 
 /* END Modal */
 
-/* Logo link */
-
-	$('.header__nav figure.logotype').on('click', function(e){
-		e.preventDefault();
-		location.href = '#top';
-	});
-
-/* END Logo link */
 
 /* Links menu and scroll */
 
-let $links = $('.navblock__link, .link__down, .button-up')
+let $links = $('.navblock__link, .logotype, .link__down, .button-up')
 				.not(function(){
 					return $(this).hasClass('navblock__link_phone');
 				});
@@ -59,13 +51,15 @@ let $links = $('.navblock__link, .link__down, .button-up')
 		let offset = 100;
 		let $elem = $(e.target);
 		let link;
-		if( !$elem.is('img') ){
-			link =  $elem.attr('href');
-		} else{
-			link = ( $elem.find('a').attr('href') == undefined )
-					? $elem.parent('a').attr('href')
-					: $elem.find('a').attr('href');
+
+		if($elem.is('a')){
+			link = $elem.attr('href');
+		} else if( !$elem.is('a') && !$elem.is('img.logotype__svg') ){
+			link = $elem.parent('a').attr('href') || $elem.find('a').attr('href');
+		} else if( $elem.is('img.logotype__svg') ) {
+			link = '#top';
 		}
+
 		$('html, body').animate({
 			scrollTop: $(link).offset().top - offset
 		}, 500);
@@ -74,7 +68,12 @@ let $links = $('.navblock__link, .link__down, .button-up')
 
 /* END Links */
 
-/* Parallax */
+/* Scroll functions: Parallax and Button up */
+
+let $button = $('.button-up');
+let $header = $('.header__nav');
+
+$button.css('display', 'none');
 
 	$(window).on('scroll', function(e){
 		let $scrollWindow = $(e.target);
@@ -82,26 +81,44 @@ let $links = $('.navblock__link, .link__down, .button-up')
 		let targetParentHeight = $target.parents('.header').outerHeight();
 		let scrolledPixels = $scrollWindow.scrollTop();
 		let offset = (scrolledPixels / targetParentHeight) * 100 / 5;
-		//console.log('targetParentHeight ' + targetParentHeight);
-		//console.log('scrolledPixels ' + scrolledPixels);
 
-		if(scrolledPixels < targetParentHeight + 30 ){
+		if(scrolledPixels < targetParentHeight + 50 ){
+			$button.css('display', 'none').addClass('showed');
+			$header.removeClass('scroll-header');
 			$target.css({
 				transition: 'transform 0.5s',
 				transform: `translateY(${offset}%) `
 			});
-			//console.log('offset ' + offset);
 		} else {
 			offset = 0;
+			$header.addClass('scroll-header');
+			$button.css('display', 'block');
 			$target.css({
 				transform: `translateY(${offset})`,
 				transition: 'transform 0.5s'
 			});
-			//console.log('offset ' + offset);
 		}
 	});
 
-/* Parallax */
+/* END Scroll functions */
+
+/* Hamburger */
+
+let $hamburger = $('.icon__hamburger');
+let $menu = $('.navblock__menu');
+let $links_menu = $menu.find('a:not(navblock__link_phone)');
+
+	$hamburger.on('click', function(){
+		$hamburger.toggleClass('clicked');
+		$menu.toggleClass('hamburger');
+	});
+
+	$links_menu.on('click', function(){
+		$menu.removeClass('hamburger');
+		$hamburger.removeClass('clicked');
+	});
+
+/* END Hamburger */
 
 });
 
